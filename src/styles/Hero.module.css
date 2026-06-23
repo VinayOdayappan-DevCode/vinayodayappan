@@ -1,0 +1,278 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  position: relative;
+}
+
+/* GRID + GLOW */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 40%, rgba(120, 80, 255, 0.2), transparent 40%);
+  z-index: 0;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 50px;
+  z-index: 1;
+  position: relative;
+}
+
+/* LEFT */
+.left {
+  max-width: 600px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid #333;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  color: #aaa;
+}
+
+.title {
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.highlight {
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  margin-top: 15px;
+  font-size: 24px;
+  color: #aaa;
+}
+
+.description {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #ccc;
+  line-height: 1.7;
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gradientBtn {
+  background: linear-gradient(90deg, #7c3aed, #a855f7);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+.gradientBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
+}
+
+.outlineBtn {
+  border: 1px solid #444;
+  padding: 12px 24px;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+.outlineBtn:hover {
+  background: white;
+  color: black;
+}
+
+/* SOCIAL */
+.socials {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  color: #888;
+}
+
+.socials a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* RIGHT */
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* IMAGE CARD */
+.imageCard {
+  position: relative;
+  border: 1px solid #222;
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(16px);
+  user-select: none;
+  pointer-events: none;
+}
+
+.imageCard img {
+  width: 400px;
+  border-radius: 10px;
+}
+
+/* TECH BOX */
+.techBox {
+  position: absolute;
+  bottom: -20px;
+  left: 10px;
+  background: rgba(20, 20, 20, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+
+.techBox p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.techBox div {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.techBox span {
+  background: #222;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.imageCard {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.hero::before {
+  animation: glow 6s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+  100% { opacity: 0.3; }
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #8b5cf6;
+  bottom: -5px;
+  left: 0;
+  transition: 0.3s;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.meta {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 18px;
+  color: #888;
+}
+
+
+
+@media (max-width: 768px) {
+  .buttons {
+    position: relative;
+    display: inline;
+  }
+  .gradientBtn, .outlineBtn {
+    margin-top: 3rem;
+    padding: 12px 24px;
+    margin: 3rem 3rem 2rem 1rem;
+  }
+  .left {
+    margin-top: 30rem;
+  }
+  .container {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 5rem;
+  }
+
+  .right {
+    margin-top: 40px;
+    position: absolute;
+  }
+
+  .imageCard img {
+    width: 260px;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+}
+
+.techBox span {
+  background: #222;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.techBox span:hover {
+  background: #8b5cf6;
+  color: white;
+}
+
+.typing {
+  color: #a78bfa;
+  font-weight: 600;
+  border-right: 2px solid #a78bfa;
+  padding-right: 5px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}

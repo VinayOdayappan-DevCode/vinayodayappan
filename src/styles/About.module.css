@@ -1,0 +1,67 @@
+.about {
+  padding: 120px 10%;
+  position: relative;
+}
+
+/* SUBTLE GRID BACKGROUND (match hero) */
+.about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(#111 1px, transparent 1px),
+                    linear-gradient(90deg, #111 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.heading {
+  font-size: 40px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* GLASS CARD */
+.card {
+  background: rgba(20, 20, 20, 0.6);
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+/* HOVER GLOW */
+.card:hover {
+  border-color: #8b5cf6;
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+}
+
+/* TEXT */
+.text {
+  font-size: 17px;
+  color: #ccc;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* HIGHLIGHT KEYWORDS */
+.text span {
+  color: #a78bfa;
+  font-weight: 500;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .card {
+    padding: 25px;
+  }
+
+  .heading {
+    text-align: center;
+  }
+}

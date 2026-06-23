@@ -1,0 +1,218 @@
+/* NAVBAR BASE */
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1100px;
+  padding: 12px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-radius: 14px;
+  z-index: 1000;
+
+  transition: all 0.3s ease;
+}
+
+/* GLASS EFFECT */
+.scrolled {
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* HIDE ON SCROLL */
+.hidden {
+  transform: translate(-50%, -120%);
+}
+
+/* LOGO */
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.logo span {
+  color: #8b5cf6;
+}
+
+/* NAV LINKS */
+.nav {
+  display: flex;
+  gap: 25px;
+}
+
+.link {
+  background: none;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 14px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.link:hover {
+  color: white;
+}
+
+/* ACTIVE LINK INDICATOR */
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+  transition: 0.3s;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.active {
+  color: white;
+}
+
+.active::after {
+  width: 100%;
+}
+
+/* RIGHT */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* RESUME BUTTON */
+.resumeBtn {
+  padding: 8px 16px;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.resumeBtn:hover {
+  transform: translateY(-2px);
+}
+
+/* MENU BUTTON */
+.menuBtn {
+  display: none;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+/* MOBILE MENU */
+/* MOBILE MENU */
+.mobileMenu {
+  position: fixed; /* Changed to fixed for full-screen behavior */
+  top: -1.5rem;
+  right: -1rem;
+  width: 100vw; /* Full screen width */
+  height: 45rem; /* Full screen height */
+  background: #111;
+  border: none;
+  border-radius: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center links vertically */
+  align-items: center; /* Center links horizontally */
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.4s ease;
+  pointer-events: none; /* Prevents clicking when closed */
+}
+
+/* Open state for mobile menu */
+.mobileMenuOpen {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mobileMenu button {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-transform: capitalize;
+  
+  /* Staggered entry animation values */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, color 0.2s ease;
+}
+
+/* Animate links when open */
+.mobileMenuOpen button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobileMenu button:hover,
+.mobileMenu .activeMobile {
+  color: white;
+}
+
+/* ANIMATED HAMBURGER TO X BUTTON */
+.menuBtn {
+  display: none; /* Hidden on desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  cursor: pointer;
+  z-index: 1001; /* Layered over the full-screen menu */
+  position: relative;
+}
+
+.menuBtn span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+  transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+/* CSS Transforms to form 'X' */
+.menuBtnOpen span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menuBtnOpen span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menuBtnOpen span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .menuBtn {
+    display: flex;
+  }
+}

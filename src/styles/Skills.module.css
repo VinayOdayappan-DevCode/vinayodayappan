@@ -1,0 +1,85 @@
+.skills {
+  padding: 120px 10%;
+  position: relative;
+}
+
+/* GRID BACKGROUND */
+.skills::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(#111 1px, transparent 1px),
+                    linear-gradient(90deg, #111 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.08;
+}
+
+.heading {
+  font-size: 40px;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+/* CARD */
+.card {
+  background: rgba(20, 20, 20, 0.85);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: #8b5cf6;
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+}
+
+/* TITLE */
+.title {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #eee;
+}
+
+/* TAGS */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tags span {
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 20px;
+
+  background: rgba(139, 92, 246, 0.15);
+  color: #a78bfa;
+
+  transition: 0.3s;
+}
+
+/* TAG HOVER */
+.tags span:hover {
+  background: #8b5cf6;
+  color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .heading {
+    text-align: center;
+  }
+}

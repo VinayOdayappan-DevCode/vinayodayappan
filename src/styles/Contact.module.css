@@ -1,0 +1,108 @@
+.contact {
+  padding: 120px 10%;
+  text-align: center;
+  position: relative;
+}
+
+/* GRID BACKGROUND */
+.contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(#111 1px, transparent 1px),
+                    linear-gradient(90deg, #111 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.08;
+}
+
+.heading {
+  font-size: 40px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.text {
+  color: #aaa;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+/* BIG CARD */
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  padding: 50px;
+  border-radius: 20px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(20, 20, 20, 0.95),
+    rgba(20, 20, 20, 0.85)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+
+  max-width: 800px;
+  margin: 0 auto;
+
+  position: relative;
+  z-index: 1;
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  border-color: #8b5cf6;
+  box-shadow: 0 25px 50px rgba(139, 92, 246, 0.25);
+}
+
+/* BUTTONS */
+.button {
+  flex: 1;
+  padding: 16px 20px;
+  
+  /* Flex layout to center icon and text */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Spacing between icon and text */
+
+  text-align: center;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #ddd;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #333;
+  transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.button:hover {
+  transform: translateY(-3px);
+  background: #8b5cf6;
+  color: white;
+  border-color: #8b5cf6;
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    padding: 30px;
+    gap: 15px; /* Slightly tighter gap on mobile */
+  }
+
+  .button {
+    flex: none; /* Reset flex-grow/shrink */
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn't break full width */
+  }
+}
