@@ -208,7 +208,7 @@ export default function Hero() {
               View My Work <ArrowRight size={16} />
             </button>
 
-            <a href="/.pdf" download className={styles.outlineBtn}>
+            <a href="/CV/Vinay-Resume.pdf" download className={styles.outlineBtn}>
               Download CV <Download size={16} />
             </a>
           </div>
