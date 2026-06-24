@@ -69,7 +69,7 @@ export default function Navbar() {
 
       {/* RIGHT */}
       <div className={styles.right}>
-        <a href="/resume.pdf" download className={styles.resumeBtn}>
+        <a href="/CV/Vinay-Resume.pdf" download className={styles.resumeBtn}>
           Resume
         </a>
 
