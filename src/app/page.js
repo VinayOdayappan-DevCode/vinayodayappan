@@ -6,24 +6,34 @@ import Contact from "@/components/Contact";
 import Language from "@/components/Language";
 import Education from "@/components/Education";
 import Footer from "@/components/Footer";
+import ScrollAnimations from "@/components/ScrollAnimations";
 
 export default function Home() {
   return (
     <>
+      <ScrollAnimations />
+
       <Hero />
+
       <About />
+
       <Projects />
+
       <Skills />
+
       <Education />
+
       <Language
-  languages={[
-    { name: "Tamil", level: "Native / Belonging" },
-    { name: "English", level: "Professional" },
-    { name: "Marathi", level: "Intermediate" },
-    { name: "Hindi", level: "Intermediate" },
-  ]}
-/>
+        languages={[
+          { name: "Tamil", level: "Native / Belonging" },
+          { name: "English", level: "Professional" },
+          { name: "Marathi", level: "Intermediate" },
+          { name: "Hindi", level: "Intermediate" },
+        ]}
+      />
+
       <Contact />
+
       <Footer />
     </>
   );

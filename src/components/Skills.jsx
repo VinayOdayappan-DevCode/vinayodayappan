@@ -9,7 +9,7 @@ export default function Skills() {
 
       <div className={styles.grid}>
         
-        <div className={styles.card}>
+        <div className={`${styles.card} skill-card`}>
           <h3 className={styles.title}>Frontend</h3>
           <div className={styles.tags}>
             <span>HTML</span>
@@ -20,7 +20,7 @@ export default function Skills() {
           </div>
         </div>
 
-        <div className={styles.card}>
+        <div className={`${styles.card} skill-card`}>
           <h3 className={styles.title}>Backend</h3>
           <div className={styles.tags}>
             <span>Firebase</span>
@@ -30,7 +30,7 @@ export default function Skills() {
           </div>
         </div>
 
-        <div className={styles.card}>
+        <div className={`${styles.card} skill-card`}>
           <h3 className={styles.title}>Tools</h3>
           <div className={styles.tags}>
             <span>Git</span>

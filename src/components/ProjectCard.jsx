@@ -4,7 +4,7 @@ import styles from "@/styles/Projects.module.css";
 
 export default function ProjectCard({ project }) {
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} project-card`}>
       <div className={styles.imageWrapper}>
         <Image 
           src={project.image} 
