@@ -65,7 +65,7 @@ export default function Language({ languages }) {
     return () => ctx.revert();
   }, []);
 
-  const emojiPool = ["அ", "A", "अ", "ह"];
+  const emojiPool = ["அ", "A", "अ", "अ"];
 
   return (
     <section
