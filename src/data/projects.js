@@ -13,4 +13,17 @@ export const projects = [
     ],
     View: "#",
   },
+  {
+    title: "Bus Booking website",
+    description:
+      "A bus booking website that allows users to search for buses, view schedules, and book tickets online.",
+    image: "/images/projects/bus-booking-app.png",
+    tech: ["ReactJS", "CSS", "TypeScript", "Docker", "git", "Prisma"],
+    features: [
+      "Passenger management",
+      "Real-time seat availability",
+      "Payment gateway integration",
+    ],
+    View: "#",
+  },
 ];
